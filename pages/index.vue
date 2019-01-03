@@ -62,6 +62,15 @@
       </div>
     </div>
     <!-- 我们的品质 -->
+    <!-- 关于我们 -->
+    <div class="box">
+      <div class="tit">关于我们</div>
+      <div class="tit_eng">About us</div>
+      <div class="about_us_text">
+        河南微风尚科技有限公司致力于互联网品牌建设与网络营销，专业领域包括网站建设、电子商务、移动互联网营销系统平台开发， 与其他网站建设及系统开发公司不同我们的整合解决方案结合了微风尚网络品牌建设经验和互联网整合营销的理念，并将策略和执行紧密结合，且不断评估并优化我们的方案，为客户提供一体化全方位的互联网品牌整合方案！
+      </div>
+    </div>
+    <!-- 关于我们 -->
   </section>
 </template>
 
@@ -245,6 +254,11 @@ export default {
         margin-top: 10px;
       }
     }
+  }
+  .about_us_text {
+    font-size: 28px;
+    color: #222222;
+    padding: 0 25px;
   }
 }
 </style>
