@@ -2,8 +2,7 @@
   <div class="header-component">
     <b-navbar
       toggleable="md" 
-      type="dark" 
-      variant="danger">
+      fixed="top">
       <img
         :src="logo"
         class="logo"
@@ -13,7 +12,8 @@
         v-html="''"/>
       <b-collapse 
         id="nav_collapse" 
-        is-nav>
+        is-nav 
+        right>
         <b-navbar-nav>
           <b-nav-item href="javascript:void(0);">首页</b-nav-item>
           <b-nav-item href="javascript:void(0);">联系我们</b-nav-item>
@@ -27,12 +27,22 @@
   .logo {
     width: 190px;
   }
+  .navbar {
+    padding: 15px 25px;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #cccccc;
+  }
   .navbar-toggler {
     width: 52px;
     height: 52px;
     padding: 0;
     border: none;
-    // background: url('../');
+    background: url('../../assets/images/menu.png') no-repeat;
+    background-size: 47px 35px;
+    background-position: center center;
+  }
+  .nav-link {
+    padding: 15px 0;
   }
 }
 </style>
