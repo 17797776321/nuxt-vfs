@@ -1,8 +1,20 @@
 <template>
   <div>
+    <my-header/>
     <nuxt/>
+    <my-footer/>
   </div>
 </template>
+<script>
+import MyHeader from '@/components/header/index.vue'
+import MyFooter from '@/components/footer/index.vue'
+export default {
+  components: {
+    MyHeader,
+    MyFooter
+  }
+}
+</script>
 
 <style>
 html {
