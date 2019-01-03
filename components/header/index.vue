@@ -16,7 +16,10 @@
         right>
         <b-navbar-nav>
           <b-nav-item href="javascript:void(0);">首页</b-nav-item>
-          <b-nav-item href="javascript:void(0);">联系我们</b-nav-item>
+          <b-nav-item href="javascript:void(0);">服务项目</b-nav-item>
+          <b-nav-item href="javascript:void(0);">案例</b-nav-item>
+          <b-nav-item href="javascript:void(0);">我们的品质</b-nav-item>
+          <b-nav-item href="javascript:void(0);">关于我们</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -54,6 +57,9 @@ export default {
     return {
       logo: Logo
     }
+  },
+  mounted() {
+    console.log(this.$router)
   }
 }
 </script>
