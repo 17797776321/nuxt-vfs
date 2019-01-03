@@ -2,7 +2,13 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  build: {
+    postcss: [
+      require('postcss-px2rem')({
+        remUnit: 75
+      })
+    ]
+  },
   /*
   ** Headers of the page
   */

@@ -5,12 +5,12 @@
       toggleable="md" 
       type="dark" 
       variant="danger">
-      <b-navbar-toggle target="nav_collapse"/>
       <b-navbar-brand href="javascript:void(0);">
         <img 
           :src="logo" 
           alt="">
       </b-navbar-brand>
+      <b-navbar-toggle target="nav_collapse"/>
       <b-collapse 
         id="nav_collapse" 
         is-nav>
