@@ -1,16 +1,16 @@
 <template>
   <div class="header-component">
-    <b-navbar 
-      fixed = "top"
+    <b-navbar
       toggleable="md" 
       type="dark" 
       variant="danger">
-      <b-navbar-brand href="javascript:void(0);">
-        <img 
-          :src="logo" 
-          alt="">
-      </b-navbar-brand>
-      <b-navbar-toggle target="nav_collapse"/>
+      <img
+        :src="logo"
+        class="logo"
+        alt="">
+      <b-navbar-toggle 
+        target="nav_collapse" 
+        v-html="''"/>
       <b-collapse 
         id="nav_collapse" 
         is-nav>
@@ -23,6 +23,18 @@
   </div>
 </template>
 <style lang="less">
+.header-component {
+  .logo {
+    width: 190px;
+  }
+  .navbar-toggler {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: none;
+    // background: url('../');
+  }
+}
 </style>
 <script>
 import Logo from '@/assets/images/vfs_logo.png'

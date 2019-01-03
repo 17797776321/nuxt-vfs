@@ -1,14 +1,6 @@
 const pkg = require('./package')
-
 module.exports = {
   mode: 'universal',
-  build: {
-    postcss: [
-      require('postcss-px2rem')({
-        remUnit: 75
-      })
-    ]
-  },
   /*
   ** Headers of the page
   */
@@ -19,7 +11,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: '/js/flexible.js',
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ]
   },
 
   /*
@@ -60,6 +59,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    postcss: [
+      require('postcss-px2rem')({
+        remUnit: 75
+      })
+    ],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
