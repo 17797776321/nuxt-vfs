@@ -11,7 +11,7 @@
       <div class="tit">服务项目</div>
       <div class="tit_eng">Service Items</div>
       <div class="options clearfix">
-        <div 
+        <div
           v-for="(item,index) in items" 
           :key="index" 
           :class="{'float-left':(index+1)%2 == 1,'float-right':(index+1)%2 == 0,'colorEFF0F0':item.ishad,'colorFBFBFB':!item.had}"
@@ -26,17 +26,62 @@
         </div>
       </div>
     </div>
+    <!-- 案例 -->
+    <div class="box">
+      <div class="tit">案例</div>
+      <div class="tit_eng">Case</div>
+      <div class="case_box">
+        <div 
+          v-for="(item,index) in caseItem" 
+          :key="index"
+          class="img_box">
+          <img 
+            :src="item.img" 
+            alt="">
+        </div>
+      </div>
+    </div>
+    <!-- 案例 -->
+    <!-- 我们的品质 -->
+    <div class="box">
+      <div class="tit">我们的品质</div>
+      <div class="tit_eng">Quality</div>
+      <div class="quality_box clearfix">
+        <div 
+          v-for="(item,index) in qualityItems" 
+          :key="index" 
+          :class="{'mr20': (index+1) != qualityItems.length,'color92C3FD':index == 1}"
+          class="option_box">
+          <img 
+            :src="item.img" 
+            :alt="item.text" 
+            class="img">
+          <div class="text">{{ item.text }}</div>
+          <div class="des">{{ item.des }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- 我们的品质 -->
   </section>
 </template>
 
 <script>
 import Banner from '@/assets/images/banner.png'
+
 import Service1 from '@/assets/images/service1.png'
 import Service2 from '@/assets/images/service2.png'
 import Service3 from '@/assets/images/service3.png'
 import Service4 from '@/assets/images/service4.png'
 import Service5 from '@/assets/images/service5.png'
 import Service6 from '@/assets/images/service6.png'
+
+import Case1 from '@/assets/images/case1.png'
+import Case2 from '@/assets/images/case2.png'
+import Case3 from '@/assets/images/case3.png'
+
+import Quality1 from '@/assets/images/quality1.png'
+import Quality2 from '@/assets/images/quality2.png'
+import Quality3 from '@/assets/images/quality3.png'
 export default {
   components: {},
   data() {
@@ -72,6 +117,34 @@ export default {
           img: Service6,
           text: '客户案例',
           ishad: true
+        }
+      ],
+      caseItem: [
+        {
+          img: Case1
+        },
+        {
+          img: Case2
+        },
+        {
+          img: Case3
+        }
+      ],
+      qualityItems: [
+        {
+          img: Quality1,
+          text: '技术领先',
+          des: '始终走在行业的前端'
+        },
+        {
+          img: Quality2,
+          text: '服务领先',
+          des: '始终已客户为主导'
+        },
+        {
+          img: Quality3,
+          text: '售后领先',
+          des: '始终为您保驾护航'
         }
       ]
     }
@@ -128,6 +201,48 @@ export default {
         font-size: 32px;
         color: #333333;
         line-height: 60px;
+      }
+    }
+  }
+  .img_box {
+    padding: 0 25px 25px 25px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .quality_box {
+    .mr20 {
+      margin-right: 25px;
+    }
+    .color92C3FD {
+      background-color: #92c3fd;
+      color: #ffffff;
+      .text {
+        color: #ffffff !important;
+      }
+      .des {
+        color: #ffffff !important;
+      }
+    }
+    .option_box {
+      display: inline-block;
+      width: 216px;
+      height: 234px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
+      .img {
+        display: block;
+        margin: 42px auto 0;
+      }
+      .text {
+        font-size: 18px;
+        color: #92c3fd;
+        margin-top: 46px;
+      }
+      .des {
+        font-size: 14px;
+        color: #92c3fd;
+        margin-top: 10px;
       }
     }
   }
