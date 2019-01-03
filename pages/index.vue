@@ -7,6 +7,10 @@
       <div class="tit">一站式服务  助力企业转型</div>
       <div class="des">十大行业解决方案  数百款营销活动 公众号</div>
     </div>
+    <div class="box">
+      <div class="tit">服务项目</div>
+      <div class="tit_eng">Service Items</div>
+    </div>
   </section>
 </template>
 
