@@ -107,7 +107,8 @@ export default {
         {
           img: Service2,
           text: '微信营销',
-          ishad: true
+          ishad: true,
+          href: 'Marketing'
         },
         {
           img: Service3,
