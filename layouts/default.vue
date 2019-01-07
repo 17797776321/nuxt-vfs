@@ -1,7 +1,7 @@
 <template>
   <div>
     <my-header/>
-    <nuxt/>
+    <nuxt class="views"/>
     <my-footer/>
   </div>
 </template>
@@ -63,5 +63,8 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.views {
+  padding-top: 80px;
 }
 </style>

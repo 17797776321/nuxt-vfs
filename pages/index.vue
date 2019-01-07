@@ -12,10 +12,11 @@
       <div class="tit_eng">Service Items</div>
       <div class="options clearfix">
         <div
-          v-for="(item,index) in items" 
-          :key="index" 
-          :class="{'float-left':(index+1)%2 == 1,'float-right':(index+1)%2 == 0,'colorEFF0F0':item.ishad,'colorFBFBFB':!item.had}"
-          class="option_box">
+          v-for="(item,index) in items"
+          :key="index"
+          :class="{'float-left':(index+1)%2 == 1,'float-right':(index+1)%2 == 0,'colorEFF0F0':item.ishad,'colorFBFBFB':!item.had}" 
+          class="option_box"
+          @click="jumpPage(item.href)">
           <img
             :src="item.img"
             :alt="item.text" 
@@ -100,7 +101,8 @@ export default {
         {
           img: Service1,
           text: '电商平台',
-          ishad: false
+          ishad: false,
+          href: 'Electronics'
         },
         {
           img: Service2,
@@ -157,13 +159,18 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    jumpPage(path) {
+      this.$router.push({ path: `/${path}` })
+    }
   }
 }
 </script>
 
 <style lang="less">
 .container {
-  padding: 80px 0 0 0;
+  padding: 0;
   .banner_box {
     width: 100%;
     position: relative;
