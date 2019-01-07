@@ -113,7 +113,8 @@ export default {
         {
           img: Service3,
           text: 'App定制',
-          ishad: true
+          ishad: true,
+          href: 'Customization'
         },
         {
           img: Service4,
