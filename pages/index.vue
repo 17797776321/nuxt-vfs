@@ -131,7 +131,8 @@ export default {
         {
           img: Service6,
           text: '客户案例',
-          ishad: true
+          ishad: true,
+          href: 'Case'
         }
       ],
       caseItem: [
