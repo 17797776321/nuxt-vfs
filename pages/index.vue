@@ -32,14 +32,16 @@
       <div class="tit">案例</div>
       <div class="tit_eng">Case</div>
       <div class="case_box">
-        <div 
-          v-for="(item,index) in caseItem" 
-          :key="index"
+        <a 
+          v-for="(item,index) in caseItem"
+          v-show="index<3" 
+          :href="item.caseurl"
+          :key="index" 
           class="img_box">
           <img 
-            :src="item.img" 
+            :src="item.pic" 
             alt="">
-        </div>
+        </a>
       </div>
     </div>
     <!-- 案例 -->
@@ -76,6 +78,7 @@
 </template>
 
 <script>
+import Axios from 'axios'
 import Banner from '@/assets/images/banner.png'
 
 import Service1 from '@/assets/images/service1.png'
@@ -93,7 +96,10 @@ import Quality1 from '@/assets/images/quality1.png'
 import Quality2 from '@/assets/images/quality2.png'
 import Quality3 from '@/assets/images/quality3.png'
 export default {
-  components: {},
+  async asyncData(context) {
+    const data = await Axios.get('http://www.vfengs.com/m.php/index/getcases')
+    return { caseItem: data.data }
+  },
   data() {
     return {
       banner: Banner,
@@ -135,17 +141,7 @@ export default {
           href: 'Case'
         }
       ],
-      caseItem: [
-        {
-          img: Case1
-        },
-        {
-          img: Case2
-        },
-        {
-          img: Case3
-        }
-      ],
+      caseItem: [],
       qualityItems: [
         {
           img: Quality1,
@@ -271,6 +267,11 @@ export default {
     font-size: 28px;
     color: #222222;
     padding: 0 25px;
+  }
+  .case_box {
+    a {
+      display: block;
+    }
   }
 }
 </style>
